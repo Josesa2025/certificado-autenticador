@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Validação de Certificados</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 16px;
+      width: 300px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #0066cc;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #004999;
+    }
+
+    #resultado {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Validação de Certificado</h1>
+  <input type="text" id="codigo" placeholder="Digite o código de validação">
+  <button onclick="validar()">Validar</button>
+  <div id="resultado"></div>
+
+  <script>
+    const codigosValidos = ['ABC123', 'XYZ789', 'CERT2024', 'MEUCODIGO456']; // adicione mais aqui
+
+    function validar() {
+      const entrada = document.getElementById('codigo').value.trim().toUpperCase();
+      const resultado = document.getElementById('resultado');
+
+      if (entrada === '') {
+        resultado.innerHTML = 'Por favor, digite um código.';
+        resultado.style.color = 'orange';
+        return;
+      }
+
+      if (codigosValidos.includes(entrada)) {
+        resultado.innerHTML = '✅ Certificado Válido!';
+        resultado.style.color = 'green';
+      } else {
+        resultado.innerHTML = '❌ Código inválido.';
+        resultado.style.color = 'red';
+      }
+    }
+  </script>
+
+</body>
+</html>
