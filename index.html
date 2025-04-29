@@ -3,14 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <title>Validação de Certificados</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       min-height: 100vh;
       margin: 0;
       padding: 20px;
@@ -18,25 +23,30 @@
 
     h1 {
       color: #333;
+      font-size: 22px;
+      text-align: center;
     }
 
     input {
       padding: 10px;
       font-size: 16px;
-      width: 300px;
-      margin-top: 10px;
+      width: 100%;
+      max-width: 300px;
+      margin-top: 15px;
       border: 1px solid #ccc;
       border-radius: 4px;
     }
 
     button {
-      margin-top: 15px;
+      margin-top: 10px;
       padding: 10px 20px;
       background-color: #0066cc;
       color: white;
       border: none;
       border-radius: 4px;
       cursor: pointer;
+      width: 100%;
+      max-width: 300px;
     }
 
     button:hover {
@@ -45,16 +55,24 @@
 
     #resultado {
       margin-top: 20px;
-      font-size: 18px;
-      font-weight: bold;
-      text-align: center;
+      font-size: 16px;
+      font-weight: normal;
+      text-align: left;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 15px;
+      max-width: 300px;
+      width: 100%;
+      word-wrap: break-word;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
     }
   </style>
 </head>
 <body>
 
   <h1>Validação de Certificado</h1>
-  <input type="text" id="codigo" placeholder="Digite o código de validação 2025">
+  <input type="text" id="codigo" placeholder="Digite o código de validação">
   <button onclick="validar()">Validar</button>
   <div id="resultado"></div>
 
@@ -89,10 +107,10 @@
       if (certificados.hasOwnProperty(entrada)) {
         const nome = certificados[entrada];
         resultado.innerHTML = `✅ Certificado válido!<br><br>
-          Nome: <strong>${nome}</strong><br>
-          Curso: <strong>${curso}</strong><br>
-          Carga Horária: <strong>${cargaHoraria}</strong><br>
-          Data do Evento: <strong>${dataEvento}</strong>`;
+          <strong>Nome:</strong> ${nome}<br>
+          <strong>Curso:</strong> ${curso}<br>
+          <strong>Carga Horária:</strong> ${cargaHoraria}<br>
+          <strong>Data do Evento:</strong> ${dataEvento}`;
         resultado.style.color = 'green';
       } else {
         resultado.innerHTML = '❌ Código inválido.';
