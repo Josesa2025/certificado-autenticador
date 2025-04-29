@@ -119,17 +119,24 @@
       }
     }
 
-    // Verifica se veio um código pela URL
-    window.onload = function () {
-      const params = new URLSearchParams(window.location.search);
-      const codigoURL = params.get('codigo');
-      if (codigoURL) {
-        const codigo = codigoURL.trim().toUpperCase();
-        document.getElementById('codigo').value = codigo;
-        exibirResultado(codigo);
-      }
-    };
-  </script>
+    // Suporte para leitura do código mesmo em iframe (Google Sites)
+  window.onload = function () {
+    let codigo = null;
 
+    try {
+      const params = new URLSearchParams(window.parent.location.search); // Tenta pegar do pai (Google Sites)
+      codigo = params.get('codigo');
+    } catch (e) {
+      const params = new URLSearchParams(window.location.search); // Fallback
+      codigo = params.get('codigo');
+    }
+
+    if (codigo) {
+      const codigoFinal = codigo.trim().toUpperCase();
+      document.getElementById('codigo').value = codigoFinal;
+      exibirResultado(codigoFinal);
+    }
+  };
+</script>
 </body>
 </html>
