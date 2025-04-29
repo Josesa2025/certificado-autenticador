@@ -90,27 +90,98 @@
     };
 
     const certificadosCurso2 = {
-    'A1B2C3D4E5': 'Marcos Lima',
-    'F6G7H8I9J0': 'Clara Barbosa',
-    'K1L2M3N4O5': 'Renato Borges',
-    'P6Q7R8S9T0': 'Larissa Martins',
-    'U1V2W3X4Y5': 'José Itamar Ferreira Alencar Sá',
-    'Z6A7B8C9D0': 'Vinícius Almeida',
-    'E1F2G3H4I5': 'Raul Ferreira de Sá',
-    'J6K7L8M9N0': 'Felipe Santos',
-    'O1P2Q3R4S5': 'Beatriz Figueiredo',
-    'T6U7V8W9X0': 'Thiago Ribeiro'
-  };
-   const infoCurso1 = {
-    curso: "Treinamento Revit – Do Zero ao Avançado",
+      'AB7X1KL9PQ': 'José Itamar Ferreira Alencar Sá',
+      'WX8RM2YE35': 'Raul Ferreira de Sá',
+      'PQ2NZL7XAD': 'Carlos Mendes Silva',
+      'LM0K8QPW9T': 'Ana Beatriz Lima',
+      'XPUV3ZR982': 'Rodrigo Costa',
+      'QW4ZLMX193': 'Fernanda Souza',
+      'PL9OK1RZ87': 'Lucas Pereira',
+      'TYX1W7RM04': 'Juliana Rocha',
+      'NZM0PA3KQ9': 'Eduardo Martins',
+      'YTR82XKLM0': 'Patrícia Gomes'
+    };
+
+    const certificadosCurso3 = {
+      'RX9KTL83PQ': 'José Itamar Ferreira Alencar Sá',
+      'MNPX84ZQWE': 'raulis',
+      'ZX5PLQ1KAD': 'Carlos Mendes Silva',
+      'AQ3L9KPWZT': 'Ana Beatriz Lima',
+      'KMV93TYX20': 'Rodrigo Costa',
+      'EXZ4MLPY09': 'Fernanda Souza',
+      'LP39KWTX87': 'Lucas Pereira',
+      'VTXM01PRKZ': 'Juliana Rocha',
+      'ZXNPQKYL10': 'Eduardo Martins',
+      'YKT83WRX12': 'Patrícia Gomes'
+    };
+    const certificadosCurso4 = {
+      'TXYK19PL03': 'José Itamar Ferreira Alencar Sá',
+      'QWRN84ZPML': 'Raul Ferreira de Sá',
+      'PKLXN72BAD': 'Carlos Mendes Silva',
+      'ZQLK8MRPWT': 'Ana Beatriz Lima',
+      'NMVX20ZK31': 'Rodrigo Costa',
+      'EY3ZLMP094': 'Fernanda Souza',
+      'BR29KWTL88': 'Lucas Pereira',
+      'VKQX13PZME': 'Juliana Rocha',
+      'ZMP4KQY087': 'Eduardo Martins',
+      'YKL93REX11': 'Patrícia Gomes'
+    };
+    const certificadosCurso5 = {
+      'XZ91KTLW23': 'José Itamar Ferreira Alencar Sá',
+      'W8ZL4YRME5': 'Raul Ferreira de Sá',
+      'XYBK7PL0AC': 'Carlos Mendes Silva',
+      'KL73PMXWZ0': 'Ana Beatriz Lima',
+      'NVU34AR9KX': 'Rodrigo Costa',
+      'E1C4XWL7MF': 'Fernanda Souza',
+      'BP2PK0LA88': 'Lucas Pereira',
+      'VQ191TCLME': 'Juliana Rocha',
+      'ZMN5PQY087': 'Eduardo Martins',
+      'YKL97REX12': 'Patrícia Gomes'
+    };
+  
+  const infoCurso1 = {
+    curso: "Treinamento Excel e MS Project - Planejamento e Orçamento",
     cargaHoraria: "25 horas",
-    dataEvento: "15/02/2023"
+    datainicialEvento: "04/11/2022"
+    datafinalEvento: "06/11/2022"
+    ministrante: "Eng. Antonio Benício de Sousa Júnior"
+    datacertificado: "10/11/2022"
+  };
+    
+  const infoCurso2 = {
+    curso: "Treinamento Business Intelligence - Power BI",
+    cargaHoraria: "25 horas",
+    datainicialEvento: "11/11/2022"
+    datafinalEvento: "13/11/2022"
+    ministrante: "Eng. Antonio Benício de Sousa Júnior"
+    datacertificado: "15/11/2022"
+  };
+    
+  const infoCurso3 = {
+    curso: "Treinamento AutoCAD - Do Zero ao Avançado",
+    cargaHoraria: "25 horas",
+    datainicialEvento: "18/11/2022"
+    datafinalEvento: "20/11/2022"
+    ministrante: "Eng. Antonio Benício de Sousa Júnior"
+    datacertificado: "23/11/2022"
   };
 
-  const infoCurso2 = {
-    curso: "Treinamento AutoCAD - Intermediário",
+  const infoCurso4 = {
+    curso: "Treinamento AutoCAD - Extensão Civil 3D",
     cargaHoraria: "25 horas",
-    dataEvento: "22/03/2023"
+    datainicialEvento: "25/11/2022"
+    datafinalEvento: "27/11/2022"
+    ministrante: "Eng. Antonio Benício de Sousa Júnior"
+    datacertificado: "01/12/2022"
+  };
+
+  const infoCurso5 = {
+    curso: "Treinamento Revit – Do Zero ao Avançado",
+    cargaHoraria: "25 horas",
+    datainicialEvento: "02/12/2022"
+    datafinalEvento: "04/02/2022"
+    ministrante: "Eng. Antonio Benício de Sousa Júnior"
+    datacertificado: "07/12/2022"
   };
  function exibirResultado(codigo) {
     const resultado = document.getElementById('resultado');
@@ -120,7 +191,10 @@
         <strong>Nome:</strong> ${nome}<br>
         <strong>Curso:</strong> ${infoCurso1.curso}<br>
         <strong>Carga Horária:</strong> ${infoCurso1.cargaHoraria}<br>
-        <strong>Data do Evento:</strong> ${infoCurso1.dataEvento}`;
+        <strong>Data de Início:</strong> ${infoCurso1.datainicialEvento}`<br>
+        <strong>Data de Término:</strong> ${infoCurso1.datafinalEvento}`<br>
+        <strong>Ministrante:</strong> ${infoCurso1.ministrante}`<br>
+        <strong>Data do Certificado:</strong> ${infoCurso1.datacertificado}`;
       resultado.style.color = 'green';
     } else if (certificadosCurso2.hasOwnProperty(codigo)) {
       const nome = certificadosCurso2[codigo];
@@ -128,7 +202,43 @@
         <strong>Nome:</strong> ${nome}<br>
         <strong>Curso:</strong> ${infoCurso2.curso}<br>
         <strong>Carga Horária:</strong> ${infoCurso2.cargaHoraria}<br>
-        <strong>Data do Evento:</strong> ${infoCurso2.dataEvento}`;
+        <strong>Data de Início:</strong> ${infoCurso2.datainicialEvento}`<br>
+        <strong>Data de Término:</strong> ${infoCurso2.datafinalEvento}`<br>
+        <strong>Ministrante:</strong> ${infoCurso2.ministrante}`<br>
+        <strong>Data do Certificado:</strong> ${infoCurso2.datacertificado}`;
+      resultado.style.color = 'green';
+    } else if (certificadosCurso3.hasOwnProperty(codigo)) {
+      const nome = certificadosCurso3[codigo];
+      resultado.innerHTML = `✅ Certificado válido!<br><br>
+        <strong>Nome:</strong> ${nome}<br>
+        <strong>Curso:</strong> ${infoCurso3.curso}<br>
+        <strong>Carga Horária:</strong> ${infoCurso3.cargaHoraria}<br>
+        <strong>Data de Início:</strong> ${infoCurso3.datainicialEvento}`<br>
+        <strong>Data de Término:</strong> ${infoCurso3.datafinalEvento}`<br>
+        <strong>Ministrante:</strong> ${infoCurso3.ministrante}`<br>
+        <strong>Data do Certificado:</strong> ${infoCurso3.datacertificado}`;
+      resultado.style.color = 'green';
+    } else if (certificadosCurso4.hasOwnProperty(codigo)) {
+      const nome = certificadosCurso4[codigo];
+      resultado.innerHTML = `✅ Certificado válido!<br><br>
+        <strong>Nome:</strong> ${nome}<br>
+        <strong>Curso:</strong> ${infoCurso4.curso}<br>
+        <strong>Carga Horária:</strong> ${infoCurso4.cargaHoraria}<br>
+        <strong>Data de Início:</strong> ${infoCurso4.datainicialEvento}`<br>
+        <strong>Data de Término:</strong> ${infoCurso4.datafinalEvento}`<br>
+        <strong>Ministrante:</strong> ${infoCurso4.ministrante}`<br>
+        <strong>Data do Certificado:</strong> ${infoCurso4.datacertificado}`;
+      resultado.style.color = 'green';
+    } else if (certificadosCurso5.hasOwnProperty(codigo)) {
+      const nome = certificadosCurso5[codigo];
+      resultado.innerHTML = `✅ Certificado válido!<br><br>
+        <strong>Nome:</strong> ${nome}<br>
+        <strong>Curso:</strong> ${infoCurso5.curso}<br>
+        <strong>Carga Horária:</strong> ${infoCurso5.cargaHoraria}<br>
+        <strong>Data de Início:</strong> ${infoCurso5.datainicialEvento}`<br>
+        <strong>Data de Término:</strong> ${infoCurso5.datafinalEvento}`<br>
+        <strong>Ministrante:</strong> ${infoCurso5.ministrante}`<br>
+        <strong>Data do Certificado:</strong> ${infoCurso5.datacertificado}`;
       resultado.style.color = 'green';
     } else {
       resultado.innerHTML = '❌ Código inválido.';
