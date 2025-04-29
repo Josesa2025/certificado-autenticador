@@ -56,7 +56,6 @@
     #resultado {
       margin-top: 20px;
       font-size: 16px;
-      font-weight: normal;
       text-align: left;
       background-color: #fff;
       border: 1px solid #ccc;
@@ -94,18 +93,10 @@
     const cargaHoraria = "35 horas";
     const dataEvento = "15/02/2023";
 
-    function validar() {
-      const entrada = document.getElementById('codigo').value.trim().toUpperCase();
+    function exibirResultado(codigo) {
       const resultado = document.getElementById('resultado');
-
-      if (entrada === '') {
-        resultado.innerHTML = 'Por favor, digite um código.';
-        resultado.style.color = 'orange';
-        return;
-      }
-
-      if (certificados.hasOwnProperty(entrada)) {
-        const nome = certificados[entrada];
+      if (certificados.hasOwnProperty(codigo)) {
+        const nome = certificados[codigo];
         resultado.innerHTML = `✅ Certificado válido!<br><br>
           <strong>Nome:</strong> ${nome}<br>
           <strong>Curso:</strong> ${curso}<br>
@@ -117,6 +108,27 @@
         resultado.style.color = 'red';
       }
     }
+
+    function validar() {
+      const entrada = document.getElementById('codigo').value.trim().toUpperCase();
+      if (entrada === '') {
+        document.getElementById('resultado').innerHTML = 'Por favor, digite um código.';
+        document.getElementById('resultado').style.color = 'orange';
+      } else {
+        exibirResultado(entrada);
+      }
+    }
+
+    // Verifica se veio um código pela URL
+    window.onload = function () {
+      const params = new URLSearchParams(window.location.search);
+      const codigoURL = params.get('codigo');
+      if (codigoURL) {
+        const codigo = codigoURL.trim().toUpperCase();
+        document.getElementById('codigo').value = codigo;
+        exibirResultado(codigo);
+      }
+    };
   </script>
 
 </body>
