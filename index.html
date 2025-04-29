@@ -76,7 +76,7 @@
   <div id="resultado"></div>
 
   <script>
-    const certificados = {
+    const certificadosCurso1 = {
       'C9F1X7L2KP': 'João da Silva',
       'W8ZQ5J1RME': 'Maria Oliveira',
       'XY2B7PL9AD': 'Carlos Mendes',
@@ -89,26 +89,52 @@
       'YKL9TREX10': 'Patrícia Gomes'
     };
 
-    const curso = "Treinamento Revit – Intermediário";
-    const cargaHoraria = "35 horas";
-    const dataEvento = "15/02/2023";
+    const certificadosCurso2 = {
+    'A1B2C3D4E5': 'Marcos Lima',
+    'F6G7H8I9J0': 'Clara Barbosa',
+    'K1L2M3N4O5': 'Renato Borges',
+    'P6Q7R8S9T0': 'Larissa Martins',
+    'U1V2W3X4Y5': 'Daniela Castro',
+    'Z6A7B8C9D0': 'Vinícius Almeida',
+    'E1F2G3H4I5': 'Isabela Fernandes',
+    'J6K7L8M9N0': 'Felipe Santos',
+    'O1P2Q3R4S5': 'Beatriz Figueiredo',
+    'T6U7V8W9X0': 'Thiago Ribeiro'
+  };
+   const infoCurso1 = {
+    curso: "Treinamento Revit – Intermediário",
+    cargaHoraria: "35 horas",
+    dataEvento: "15/02/2023"
+  };
 
-    function exibirResultado(codigo) {
-      const resultado = document.getElementById('resultado');
-      if (certificados.hasOwnProperty(codigo)) {
-        const nome = certificados[codigo];
-        resultado.innerHTML = `✅ Certificado válido!<br><br>
-          <strong>Nome:</strong> ${nome}<br>
-          <strong>Curso:</strong> ${curso}<br>
-          <strong>Carga Horária:</strong> ${cargaHoraria}<br>
-          <strong>Data do Evento:</strong> ${dataEvento}`;
-        resultado.style.color = 'green';
-      } else {
-        resultado.innerHTML = '❌ Código inválido.';
-        resultado.style.color = 'red';
-      }
+  const infoCurso2 = {
+    curso: "Workshop AutoCAD Básico",
+    cargaHoraria: "20 horas",
+    dataEvento: "22/03/2023"
+  };
+ function exibirResultado(codigo) {
+    const resultado = document.getElementById('resultado');
+  if (certificadosCurso1.hasOwnProperty(codigo)) {
+      const nome = certificadosCurso1[codigo];
+      resultado.innerHTML = `✅ Certificado válido!<br><br>
+        <strong>Nome:</strong> ${nome}<br>
+        <strong>Curso:</strong> ${infoCurso1.curso}<br>
+        <strong>Carga Horária:</strong> ${infoCurso1.cargaHoraria}<br>
+        <strong>Data do Evento:</strong> ${infoCurso1.dataEvento}`;
+      resultado.style.color = 'green';
+    } else if (certificadosCurso2.hasOwnProperty(codigo)) {
+      const nome = certificadosCurso2[codigo];
+      resultado.innerHTML = `✅ Certificado válido!<br><br>
+        <strong>Nome:</strong> ${nome}<br>
+        <strong>Curso:</strong> ${infoCurso2.curso}<br>
+        <strong>Carga Horária:</strong> ${infoCurso2.cargaHoraria}<br>
+        <strong>Data do Evento:</strong> ${infoCurso2.dataEvento}`;
+      resultado.style.color = 'green';
+    } else {
+      resultado.innerHTML = '❌ Código inválido.';
+      resultado.style.color = 'red';
     }
-
+  }
     function validar() {
       const entrada = document.getElementById('codigo').value.trim().toUpperCase();
       if (entrada === '') {
