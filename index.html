@@ -11,8 +11,9 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      min-height: 100vh;
       margin: 0;
+      padding: 20px;
     }
 
     h1 {
@@ -46,6 +47,7 @@
       margin-top: 20px;
       font-size: 18px;
       font-weight: bold;
+      text-align: center;
     }
   </style>
 </head>
@@ -57,7 +59,22 @@
   <div id="resultado"></div>
 
   <script>
-    const codigosValidos = ['ABC123', 'XYZ789', 'CERT2024', 'MEUCODIGO456']; // adicione mais aqui
+    const certificados = {
+      '4YH8MZL2XQKJ93V0WRND': 'João da Silva',
+      'A7XU19C0E8ZQ5FKLWT9P': 'Maria Oliveira',
+      'PQD8K1ZRMXE23L7V04CA': 'Carlos Mendes',
+      'MV94N2JK5XQZTBP07LYU': 'Ana Beatriz Lima',
+      'XCN05YHULR2KVEQ87MPZ': 'Rodrigo Costa',
+      '9WTX2ZEMLA7CVBQ0HRKP': 'Fernanda Souza',
+      'LRXP7N48ECK2WTZMQY01': 'Lucas Pereira',
+      'TK39PWQVCELUM0ZR5XY8': 'Juliana Rocha',
+      'FBLYUQ90WTXN38MZKRPC': 'Eduardo Martins',
+      'YWCEZTK97PMX08LR4AVN': 'Patrícia Gomes'
+    };
+
+    const curso = "Treinamento Revit – Intermediário";
+    const cargaHoraria = "35 horas";
+    const dataEvento = "15/02/2023";
 
     function validar() {
       const entrada = document.getElementById('codigo').value.trim().toUpperCase();
@@ -69,8 +86,13 @@
         return;
       }
 
-      if (codigosValidos.includes(entrada)) {
-        resultado.innerHTML = '✅ Certificado Válido!';
+      if (certificados.hasOwnProperty(entrada)) {
+        const nome = certificados[entrada];
+        resultado.innerHTML = `✅ Certificado válido!<br><br>
+          Nome: <strong>${nome}</strong><br>
+          Curso: <strong>${curso}</strong><br>
+          Carga Horária: <strong>${cargaHoraria}</strong><br>
+          Data do Evento: <strong>${dataEvento}</strong>`;
         resultado.style.color = 'green';
       } else {
         resultado.innerHTML = '❌ Código inválido.';
