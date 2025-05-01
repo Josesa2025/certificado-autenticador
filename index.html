@@ -76,6 +76,18 @@
   <div id="resultado"></div>
 
   <script>
+    const certificadosCurso0 = {
+      'HF53Q9RRBB': 'José Itamar Ferreira Alencar Sá',
+      'OL0OW10MDR': 'Raul Ferreira de Sá',
+      '5U6KZED1WV': 'Carlos Mendes Silva',
+      'CC0WYGZUNB': 'Ana Beatriz Lima',
+      'V2IZH10NXC': 'Rodrigo Costa',
+      'ZVJGRRKZL9': 'Fernanda Souza',
+      '2DPY59GH6Y': 'Lucas Pereira',
+      'N0ZP8ZMHW2': 'Juliana Rocha',
+      'G0KTHERT7T': 'Eduardo Martins',
+      'DG86VKB2VS': 'Patrícia Gomes'
+    };
     const certificadosCurso1 = {
       'C9F1X7L2KP': 'José Itamar Ferreira Alencar Sá',
       'W8ZQ5J1RME': 'Raul Ferreira de Sá',
@@ -138,9 +150,16 @@
       'ZMN5PQY087': 'Eduardo Martins',
       'YKL97REX12': 'Patrícia Gomes'
     };
-  
+  const infoCurso0 = {
+    curso: "Pacote Office - Essencial",
+    cargaHoraria: "25 horas",
+    datainicialEvento: "28/10/2022",
+    datafinalEvento: "30/10/2022",
+    ministrante: "Eng. Antonio Benício de Sousa Júnior",
+    datacertificado: "31/10/2022"
+  };
   const infoCurso1 = {
-    curso: "Excel e MS Project - Planejamento e Orçamento",
+    curso: "Fundamentos do MS Project - Planejamento e Orçamento",
     cargaHoraria: "25 horas",
     datainicialEvento: "04/11/2022",
     datafinalEvento: "06/11/2022",
@@ -185,7 +204,18 @@
   };
  function exibirResultado(codigo) {
     const resultado = document.getElementById('resultado');
-  if (certificadosCurso1.hasOwnProperty(codigo)) {
+   if (certificadosCurso0.hasOwnProperty(codigo)) {
+      const nome = certificadosCurso0[codigo];
+      resultado.innerHTML = `✅ Certificado válido!<br><br>
+        <strong>Nome:</strong> ${nome}<br>
+        <strong>Curso:</strong> ${infoCurso0.curso}<br>
+        <strong>Carga Horária:</strong> ${infoCurso0.cargaHoraria}<br>
+        <strong>Data de Início:</strong> ${infoCurso0.datainicialEvento}<br>
+        <strong>Data de Término:</strong> ${infoCurso0.datafinalEvento}<br>
+        <strong>Ministrante:</strong> ${infoCurso0.ministrante}<br>
+        <strong>Data do Certificado:</strong> ${infoCurso0.datacertificado}`;
+      resultado.style.color = 'green';
+   } else if (certificadosCurso1.hasOwnProperty(codigo)) {
       const nome = certificadosCurso1[codigo];
       resultado.innerHTML = `✅ Certificado válido!<br><br>
         <strong>Nome:</strong> ${nome}<br>
