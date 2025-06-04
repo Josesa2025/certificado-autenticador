@@ -150,6 +150,18 @@
       'ZMN5PQY087': 'Eduardo Martins',
       'YKL97REX12': 'Patrícia Gomes'
     };
+    const certificadosCurso6 = {
+      'SKT01A2B3C': 'José Itamar Ferreira Alencar Sá',
+      'SKT04D5E6F': 'Raul Ferreira de Sá',
+      'SKT07G8H9I': 'Carlos Mendes Silva',
+      'SKT10J1K2L': 'Ana Beatriz Lima',
+      'SKT13M4N5O': 'Rodrigo Costa',
+      'SKT16P6Q7R': 'Fernanda Souza',
+      'SKT19S8T9U': 'Lucas Pereira',
+      'SKT22V1W2X': 'Juliana Rocha',
+      'SKT25Y3Z4A': 'Eduardo Martins',
+      'SKT28B5C6D': 'Patrícia Gomes'
+    };
   const infoCurso0 = {
     curso: "Pacote Office - Essencial",
     cargaHoraria: "25 horas",
@@ -202,6 +214,16 @@
     ministrante: "Eng. Antonio Benício de Sousa Júnior",
     datacertificado: "07/12/2022"
   };
+
+    const infoCurso6 = {
+  curso: "SketchUp Essencial – Modelagem 3D para Arquitetura",
+  cargaHoraria: "25 horas",
+  datainicialEvento: "09/12/2022",
+  datafinalEvento: "11/12/2022",
+  ministrante: "Eng. Antonio Benício de Sousa Júnior",
+  datacertificado: "14/12/2022"
+};
+    
  function exibirResultado(codigo) {
     const resultado = document.getElementById('resultado');
    if (certificadosCurso0.hasOwnProperty(codigo)) {
@@ -270,7 +292,18 @@
         <strong>Ministrante:</strong> ${infoCurso5.ministrante}<br>
         <strong>Data do Certificado:</strong> ${infoCurso5.datacertificado}`;
       resultado.style.color = 'green';
-    } else {
+    } else if (certificadosCurso6.hasOwnProperty(codigo)) {
+  const nome = certificadosCurso6[codigo];
+  resultado.innerHTML = `✅ Certificado válido!<br><br>
+    <strong>Nome:</strong> ${nome}<br>
+    <strong>Curso:</strong> ${infoCurso6.curso}<br>
+    <strong>Carga Horária:</strong> ${infoCurso6.cargaHoraria}<br>
+    <strong>Data de Início:</strong> ${infoCurso6.datainicialEvento}<br>
+    <strong>Data de Término:</strong> ${infoCurso6.datafinalEvento}<br>
+    <strong>Ministrante:</strong> ${infoCurso6.ministrante}<br>
+    <strong>Data do Certificado:</strong> ${infoCurso6.datacertificado}`;
+  resultado.style.color = 'green';
+     } else {
       resultado.innerHTML = '❌ Código inválido.';
       resultado.style.color = 'red';
     }
